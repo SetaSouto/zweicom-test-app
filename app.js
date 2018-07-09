@@ -18,7 +18,7 @@ app.use(function (req, res, next) {
 
 app.use(function (err, req, res, next) {
   logger.info(err)
-  res.json({status: err.status, message: err.message})
+  res.json({error: {status: err.status, message: err.message}})
 })
 
 module.exports = app

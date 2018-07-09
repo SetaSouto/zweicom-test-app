@@ -10,8 +10,8 @@ chai.should()
 describe('App tests', () => {
   it('Should return an error with status 404 for a not found path', done => {
     chai.request(app).get('/not-a-correct-path').then(res => {
-      res.body.should.have.property('status')
-      res.body.status.should.be.equal(404)
+      res.body.error.should.have.property('status')
+      res.body.error.status.should.be.equal(404)
       done()
     })
   })

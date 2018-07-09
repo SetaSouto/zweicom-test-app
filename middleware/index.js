@@ -17,9 +17,10 @@ function createError (status, message) {
  * @param {Object} next - Next function to call the next middleware.
  */
 function fibonacci (req, res, next) {
-  const n = req.query.n
+  let n = req.query.n
   if (!n) return next(createError(400, `Missing required property 'n'`))
-  if (!Number(n)) return next(createError(400, `'n' must be a number.`))
+  n = Number(n)
+  if (isNaN(n) || n < 0) return next(createError(400, `'n' must be a number greater or equal than 0.`))
   // Starting points
   let prev = 0
   let actual = 1
