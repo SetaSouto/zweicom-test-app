@@ -1,0 +1,21 @@
+{
+  "name": "zweicom-test-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node -r dotenv/config ./bin/www",
+    "start": "node ./bin/www",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "express": "~4.16.0",
+    "mocha": "^5.2.0",
+    "winston-namespace": "^1.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^6.0.0",
+    "standard": "^11.0.1"
+  }
+}
